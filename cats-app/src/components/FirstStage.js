@@ -1,5 +1,6 @@
 import React,{ useContext, useState, useEffect } from "react";
 import Context from "../context/Context";
+import "../pages/Form.css";
 
 function FirstStage () {
 	const [email, setEmail] = useState('');
@@ -36,7 +37,7 @@ function FirstStage () {
 	});
 
 	return (
-		<form id="forms">
+		<form id="forms" className="form-pages">
 			<label>Email:
 				<input 
 					placeholder="seuemail@exemplo"

@@ -1,0 +1,15 @@
+.btn-header {
+  background-color: #eff168;
+  color: #121b23;
+  border-radius: 5px;
+  margin: 1%;
+  padding: 1%;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-decoration: none
+}
+.main-header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}

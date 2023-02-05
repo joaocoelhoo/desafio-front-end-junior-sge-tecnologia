@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import Header from "../components/Header";
 import Context from "../context/Context";
-import CatCard from "../components/CatCard"
+import CatCard from "../components/CatCard";
+import "./CatsList.css";
 
 function CatsList() {
 	const { tagsData } = useContext(Context);
@@ -9,14 +10,16 @@ function CatsList() {
   return (
 		<div>
 			<Header />
-			{
-				tagsData.map((tag, index) => (
-					<CatCard 
-						key={`tag-${index}`}
-						tag={tag}
-					/>
-				))
-			}
+			<div className="cats-list">
+				{
+					tagsData.map((tag, index) => (
+						<CatCard 
+							key={`tag-${index}`}
+							tag={tag}
+						/>
+					))
+				}
+			</div>
 		</div>
 	);
 }

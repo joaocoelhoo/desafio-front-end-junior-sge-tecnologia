@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Context from "../context/Context";
+import "../pages/Form.css";
 
 function ThirdStage () {
 	const [street, setStreet] = useState('');
@@ -25,7 +26,7 @@ function ThirdStage () {
 	});
 
   return (
-		<form id="forms">
+		<form id="forms" className="form-pages">
 			<label>Rua:
 				<input
 					placeholder="Nome da rua"

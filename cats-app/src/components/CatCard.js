@@ -1,10 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import Context from "../context/Context";
+import "./CatCard.css"
+import useCollapse from 'react-collapsed';
 
 function CatCard(props) {
   const { tag } = props;
   const { catsData } = useContext(Context);
   const [cats, setCats] = useState([]);
+
+  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
 
   const filterCats = () => {
     const cats = catsData.filter((cat) => cat.tags && cat.tags.includes(tag));
@@ -16,12 +20,19 @@ function CatCard(props) {
 	}, []);
 
   return (
-    <div> 
+    <div className="cat-card collapsible"> 
       {
-        catsData.length > 0 && 
+        tag && 
         <div>
-          tag: { tag }
-          { cats.map((cat, index) => <span key={`cat-${index}`}>id: {cat._id}</span>) }
+          <div className="header" {...getToggleProps()}>
+            { tag }
+          </div>
+          { catsData.length > 0 && 
+          <div {...getCollapseProps()}>
+            <div className="content">
+            { cats.map((cat, index) => <p key={`cat-${index}`}>id: {cat._id}</p>) }
+            </div>
+          </div> }
         </div>
       }
     </div>

@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import Context from "../context/Context";
+import "../pages/Form.css";
 
 function SecondStage () {
 	const [username, setUsername] = useState('');
@@ -18,7 +19,7 @@ function SecondStage () {
 	});
 
   return (
-		<form id="forms">
+		<form id="forms" className="form-pages">
 			<label>Nome:
 				<input
 					placeholder="Ex: João"
